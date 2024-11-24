@@ -76,4 +76,16 @@
 //     }
 // }
 
-//  test()
+
+//Question 6   const funtion can not be hoisted and Temporal dead zone explaination
+//Temporal deadzoen starts 
+const test=()=> console.log(letvar);
+//temporal deadzoen 
+let letvar=3; // temporal deadzone ends here 
+test()
+//test()
+
+//Queston 7: why hoisting is present in the JavaSCript ?
+//Ans: beacuse of JavaScirpt's compilaation process in two steps :
+// creation--> create / allocate memory space for vairables and funtion 
+//Execution --> executes the whole code  line by line by interpreter 
