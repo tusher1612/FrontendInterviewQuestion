@@ -139,7 +139,6 @@ console.log(memoizedSquare(6)); // New input: Performs calculation for 6
 - **Impure Functions**: Functions that may produce different outputs for the same input or cause side effects (e.g., writing to the console).
 - **Memoization**: A technique to optimize functions by caching results for repeated inputs, most effective with pure functions.
 
-By using pure functions, you can ensure deterministic behavior, make your code easier to test, and improve performance with techniques like memoization.
 
 ```
 
