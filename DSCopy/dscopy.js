@@ -47,18 +47,71 @@
 
 //Question 3 for nested objcet  make it a shallow copy 
 
-const user1={
-        name:"Vasooli",
-        age:25,
-        location:{
-            city:"Rumbalala",
-            state:"Bengaluru"
-        }
-    }
+// const user1={
+//         name:"Vasooli",
+//         age:25,
+//         location:{
+//             city:"Rumbalala",
+//             state:"Bengaluru"
+//         }
+//     }
     
-    user2=JSON.parse(JSON.stringify(user1));//we will use JSON.parse(JSON.strignfy)
-    //here Object.assign({},user) or {...} these two methods won't work 
+    // user2=JSON.parse(JSON.stringify(user1));//we will use JSON.parse(JSON.strignfy)
+    // //here Object.assign({},user) or {...} these two methods won't work 
   
-    user2.location.city="Hulala";
-    console.log(user1)
-    console.log(user2)
+    // user2.location.city="Hulala";
+    // console.log(user1)
+    // console.log(user2)
+
+    //Question:4 when not to use JSON.parse(JSON.stringify()) for deep copy
+    //when a object has date object
+    //when a object has function 
+    //when a object has Infinity  and also undefined value 
+
+    //Q4.1 object has date object stringify convert that date object into string 
+    
+    function Q4_1(){
+        const obj1={
+          
+            sampleDate:new Date()//it will give current date 
+        }
+        const obj2=JSON.parse(JSON.stringify(obj1))
+        console.log(obj1);//it is object
+        console.log(obj2);//it became string 
+    }
+    //Q4_1();
+
+    //Q4.2 object has undefined and infinity stringify convert that date object into string 
+    function Q4_2(){
+        const obj1={
+          
+            sampleDate:new Date(),//it will give current date 
+            myValue:-Infinity,
+            otherValue:undefined
+        }
+        const obj2=JSON.parse(JSON.stringify(obj1))
+        console.log(obj1);//it is object
+        console.log(obj2);//it became string 
+    }
+   // Q4_2();
+
+ //Q4.3 object has undefined and infinity value and function  stringify convert that date object into string 
+ function Q4_3(){
+    const obj1={
+        myFunction: Q4_2,
+       // sampleDate:new Date(),//it will give current date 
+        myValue:-Infinity,
+        otherValue:undefined,
+        value2:NaN
+    }
+    const obj2=JSON.parse(JSON.stringify(obj1))
+    console.log(obj1);//it is object
+    console.log(obj2);//it became string 
+}
+//Q4_3();
+
+//if a object has  special values like infinity,undefined,fucntion, date object we can not use Json.parse concept
+//solution:
+//we can use Lodash
+//we can copy menually 
+// we can use recursive approch to copy the object 
