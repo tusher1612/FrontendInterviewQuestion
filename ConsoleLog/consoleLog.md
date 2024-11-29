@@ -1,4 +1,3 @@
----
 
 # **JavaScript Operator Precedence and Unary Operators Cheat Sheet**
 
