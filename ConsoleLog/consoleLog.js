@@ -12,4 +12,4 @@
 // console.log(+false);//0
 // console.log(+"1"+"1"+"2");//1+"1"="11"+"2"="112"
 // console.log(+"a"-"b"+2);//NaN
-// console.log(+"a"-"b"+"2");//NaN
+// console.log(+"a"-"b"+"2");//NaN2
